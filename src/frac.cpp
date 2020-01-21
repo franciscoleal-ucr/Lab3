@@ -19,7 +19,7 @@ Frac Frac::operator + (Frac const &obj){
     int a = std::max(this->denom, obj.denom);
     int b = std::min(this->denom, obj.denom);
     int c = a;
-    int d = d; 
+    int d = b; 
     do{
       mcd= d;
       d = c%d;
@@ -27,7 +27,7 @@ Frac Frac::operator + (Frac const &obj){
     } while(d!=0);
     mcm = (a/mcd)*b;
 
-    result.num = ((mcm/this->denom)*this->num) + ((mcm/obj.denom)*obj.denom);
+    result.num = ((mcm/this->denom)*this->num) + ((mcm/obj.denom)*obj.num);
     result.denom = mcm;
     
     return result;
@@ -41,7 +41,7 @@ Frac Frac::operator - (Frac const &obj){
     int a = std::max(this->denom, obj.denom);
     int b = std::min(this->denom, obj.denom);
     int c = a;
-    int d = d; 
+    int d = b; 
     do{
       mcd= d;
       d = c%d;
@@ -49,7 +49,7 @@ Frac Frac::operator - (Frac const &obj){
     } while(d!=0);
     mcm = (a/mcd)*b;
 
-    result.num = ((mcm/this->denom)*this->num) - ((mcm/obj.denom)*obj.denom);
+    result.num = ((mcm/this->denom)*this->num) - ((mcm/obj.denom)*obj.num);
     result.denom = mcm;
     
     return result;
